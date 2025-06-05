@@ -6,7 +6,6 @@ import { VitePWA } from 'vite-plugin-pwa'  // This line is missing
 export default defineConfig({
   plugins: [
     react(),
-    react(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
@@ -28,29 +27,10 @@ export default defineConfig({
             purpose: 'any maskable'
           }
         ],
-        // Enable offline functionality
-        display: 'standalone',
-        start_url: '/',
-        background_color: '#ffffff'
+
       },
-      // Add workbox configuration for offline support
-      strategies: 'generateSW',
-      workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
-        runtimeCaching: [
-          {
-            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'google-fonts-cache',
-              expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365 // <== 1 year
-              }
-            }
-          }
-        ]
-      }
+
+      
     })
   ],
   base: "/test_webapp/",// ajouter le nom du depot github si on publie sur GH pages : "/exemple/"

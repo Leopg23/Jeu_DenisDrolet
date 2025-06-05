@@ -18,7 +18,7 @@ function Appli() {
        <input
         type="file"
         accept="image/*"
-        // multiple
+        multiple
         onChange={handleFiles}
       />
       {photo && <img src={photo} alt="" />}
