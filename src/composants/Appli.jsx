@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Commandes from "./Commandes";
 import Versus from './Versus';
 import ChoisirImg from './ChoisirImg';
-import imgPersoBase from '/images/persoBase.png';
+import persoBaseImage from '/images/persoBase.png';
 
 function Appli() {
   const [photo, setphoto] = useState(null);
@@ -12,8 +12,9 @@ function Appli() {
   const [photo1, setphoto1] = useState(null);
   const [photo2, setphoto2] = useState(null);
   const [avantPremierVs, setAvantPremierVs] = useState(true);
+  const [ApresDernierVs, setApresDernierVs] = useState(false);
   const [nomPerso, setNomPerso] = useState("");
-  const imgPersoBase = {imgPersoBase, name: "Perso Base", url: imgPersoBase};
+  const imgPersoBase = { image: persoBaseImage, name: "Perso Base", url: persoBaseImage };
   function gererPhotos(event) {
     const files = event.target.files;
     if (files && files.length > 0) {
@@ -51,18 +52,26 @@ function Appli() {
     let p1 = imgPersoBase.url;
     let p2 = imgPersoBase.url;
     if (photoRestantes.length >= 2) {
+      console.log("Il y a assez de photos pour choisir");
       const index1 = Math.floor(Math.random() * photoRestantes.length);
       const p1 = photoRestantes.splice(index1, 1)[0].url;
 
       const index2 = Math.floor(Math.random() * photoRestantes.length);
       const p2 = photoRestantes.splice(index2, 1)[0].url;
+
+
     }
-    console.log(p1, p2);
-    setphoto1(p1);
-    setphoto2(p2);
+    else {
+      setApresDernierVs(true);
+      setphoto1(null);
+      setphoto2(null);
+    }
+
+
+
 
     setPhotoUrls(photoRestantes);
-    console.log(photoUrls);
+
   }
 
   return (
@@ -86,6 +95,7 @@ function Appli() {
               photo1={photo1}
               photo2={photo2}
               avantPremierVs={avantPremierVs}
+              ApresDernierVs={ApresDernierVs}
             />
 
             <Commandes
