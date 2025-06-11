@@ -1,0 +1,40 @@
+.Versus {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto 1fr;
+    width: 100%;
+    // height: 70vh;
+    background-color: #efabab;
+    justify-content: center;
+    align-items: center;
+
+
+    .perso {
+        padding: 1.5rem;
+        background-color: #fffa76;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            // height: 680px;
+            width: clamp(9.375rem, -4.464rem + 36.905vw, 28.75rem);
+
+        }
+    }
+
+    .vs {
+        
+        min-width: clamp(6.25rem, 4.286rem + 5.238vw, 9rem);
+        margin: clamp(3rem, 0.679rem + 6.19vw, 6.25rem);
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+
+    .separateur {
+        width: 3rem ;
+    }
+}
