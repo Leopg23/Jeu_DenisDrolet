@@ -20,12 +20,15 @@ function Versus({ photo, setphoto, gererPhotos, photoUrls, choisirPhotos, photoH
         }
     }, [photo1, photo2, avantPremierVs, ApresDernierVs]);
 
+
     return (
 
                 <div className='Versus'>
                     <div className="separateur"></div>
                     <div className="perso 1">
-                        <img src={displayState == "versus" ? photo1 : perso1_base} />
+                        <img 
+                            src={displayState == "versus" ? photo1 : perso1_base}
+                        />
                     </div>
                     <div className="vs">
                         <img src={vs} />
@@ -36,70 +39,7 @@ function Versus({ photo, setphoto, gererPhotos, photoUrls, choisirPhotos, photoH
                     <div className="separateur"></div>
                 </div>
             )
-    // switch (displayState) {
-    //     case 'versus':
-    //         return (
-
-    //             <div className='Versus'>
-    //                 <div className="separateur"></div>
-    //                 <div className="perso 1">
-    //                     <img src={photo1} />
-    //                 </div>
-    //                 <div className="vs">
-    //                     <img src={vs} />
-    //                 </div>
-    //                 <div className="perso 2">
-    //                     <img src={photo2} />
-    //                 </div>
-    //                 <div className="separateur"></div>
-    //             </div>
-    //         )
-    //     case 'avantPremierVs':
-    //         return (
-    //             <div className='Versus'>
-    //                 <div className="separateur"></div>
-    //                 <div className="perso 1">
-    //                     <img src={perso1_base} />
-    //                 </div>
-    //                 <div className="vs">
-    //                     <img src={vs}></img>
-    //                 </div>
-    //                 <div className="perso 2">
-    //                     <img src={perso2_base} />
-    //                 </div>
-    //                 <div className="separateur"></div>
-    //             </div>
-    //         );
-
-    //     case 'ApresDernierVs':
-    //         return (
-    //             <div className='Versus'>
-    //                 <div className="separateur"></div>
-    //                 <div className="perso 1">
-    //                     <img src={perso1_base} />
-    //                 </div>
-    //                 <div className="vs">
-    //                     <img src={vs} />
-    //                 </div>
-    //                 <div className="perso 2">
-    //                     <img src={perso2_base} />
-    //                 </div>
-    //                 <div className="separateur"></div>
-    //             </div>
-    //         );
-    //     default:
-    //         return (
-    //             <div className='Versus'>
-    //                 <h1>Bienvenue dans l'application</h1>
-    //                 <input
-    //                     type="file"
-    //                     accept="image/*"
-    //                     multiple
-    //                     onChange={gererPhotos}
-    //                 />
-    //             </div>
-    //         );
-    // }
+    
 
 
 }

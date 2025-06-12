@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr auto auto auto 1fr;
     width: 100%;
-    // height: 70vh;
+    min-height: 70vh;
     background-color: #efabab;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@
     }
 
     .vs {
-        
+
         min-width: clamp(6.25rem, 4.286rem + 5.238vw, 9rem);
         margin: clamp(3rem, 0.679rem + 6.19vw, 6.25rem);
 
@@ -35,6 +35,30 @@
     }
 
     .separateur {
-        width: 3rem ;
+        width: 3rem;
+    }
+
+
+    .perso img {
+        transition: all 0.5s ease;
+    }
+
+    .image-enter {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    .image-enter-active {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .image-exit {
+        opacity: 1;
+    }
+
+    .image-exit-active {
+        opacity: 0;
+        transform: scale(1.2);
     }
 }

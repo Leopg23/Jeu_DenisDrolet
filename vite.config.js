@@ -33,7 +33,7 @@ export default defineConfig({
       
     })
   ],
-  base: "/test_webapp/",// ajouter le nom du depot github si on publie sur GH pages : "/exemple/"
+  base: "/Jeu_DenisDrolet/",// ajouter le nom du depot github si on publie sur GH pages : "/exemple/"
   server: {
     host: '0.0.0.0'
   }
