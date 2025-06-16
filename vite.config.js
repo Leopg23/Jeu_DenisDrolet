@@ -14,6 +14,8 @@ export default defineConfig({
         short_name: 'PhotoApp',
         description: 'Photo upload application',
         theme_color: '#ffffff',
+        display: 'standalone',
+        start_url: '.',       
         icons: [
           {
             src: 'pwa-192x192.png',
@@ -30,7 +32,7 @@ export default defineConfig({
 
       },
 
-      
+
     })
   ],
   base: "/Jeu_DenisDrolet/",// ajouter le nom du depot github si on publie sur GH pages : "/exemple/"

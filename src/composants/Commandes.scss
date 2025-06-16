@@ -6,7 +6,8 @@
   width: 100%;
   background-color: black;
   align-items: flex-end;
-
+  color: white;
+  
   .btnRetour {
     justify-self: center;
     margin-bottom: 1rem;
@@ -17,11 +18,15 @@
     }
   }
 
+  .nomPerso {
+    justify-self: center;
+    align-self: center;
+  }
   .btnBataille {
     justify-self: center;
     align-self: center;
 
-    min-width: 250px;
+    min-width: 200px;
 
        .cls-1 {
         fill: #49660f;

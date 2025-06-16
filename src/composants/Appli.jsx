@@ -10,14 +10,21 @@ function Appli() {
   const [photoUrls, setPhotoUrls] = useState([]); // Convert to state variable
   const [photo1, setphoto1] = useState(null);
   const [photo2, setphoto2] = useState(null);
+  const [nomPhoto1, setNomPhoto1] = useState(null);
+  const [nomPhoto2, setNomPhoto2] = useState(null);
+  
   const [avantPremierVs, setAvantPremierVs] = useState(true);
   const [ApresDernierVs, setApresDernierVs] = useState(false);
   const [nomPerso, setNomPerso] = useState("");
 
   const [anciennesphotos, setAnciennesPhotos] = useState([]);
   const [photosPresentes, setPhotosPresentes] = useState([]);
+  const [nomAnciennesphotos, setNomAnciennesPhotos] = useState([]);
+  const [nomPhotosPresentes, setNomPhotosPresentes] = useState([]);
   const [aCliquerRetour, setACliquerRetour] = useState(false);
 
+
+  
   function gererPhotos(event) {
     const files = event.target.files;
     if (files && files.length > 0) {
@@ -53,33 +60,54 @@ function Appli() {
     if (!aCliquerRetour) {
       const photoRestantes = [...photoUrls];
       setAnciennesPhotos([]);
+      setNomAnciennesPhotos([]);
       setPhotosPresentes([]);
+      setNomPhotosPresentes([]);
       // console.log(photoRestantes.length);
       if (photoRestantes.length >= 2) {
         // console.log("Il y a assez de photos pour choisir");
         const index1 = Math.floor(Math.random() * photoRestantes.length);
 
-        const p1 = photoRestantes.splice(index1, 1)[0].url;
+        const photo1Obj = photoRestantes.splice(index1, 1)[0];
+        const p1 = { url: photo1Obj.url, name: photo1Obj.name };
+    
 
         const index2 = Math.floor(Math.random() * photoRestantes.length);
 
-        const p2 = photoRestantes.splice(index2, 1)[0].url;
+        const photo2Obj = photoRestantes.splice(index2, 1)[0];
+        const p2 = { url: photo2Obj.url, name: photo2Obj.name };
 
         setAnciennesPhotos(prev => [...prev, photo1]);
-        setphoto1(p1);
+        setNomAnciennesPhotos(prev => [...prev, nomPhoto1]);
+
+        setphoto1(p1.url);
+        setNomPhoto1(p1.name);
 
         setAnciennesPhotos(prev => [...prev, photo2]);
-        setphoto2(p2);
-        setPhotosPresentes([p1, p2])
+        setNomAnciennesPhotos(prev => [...prev, nomPhoto2]);
+
+        setphoto2(p2.url);
+        setNomPhoto2(p2.name);
+
+        setPhotosPresentes([p1.url, p2.url])
+        setNomPhotosPresentes([p1.name, p2.name]);
 
         setAvantPremierVs(false);
       }
       else {
         setApresDernierVs(true);
+
         setAnciennesPhotos(prev => [...prev, photo1]);
+        setNomAnciennesPhotos(prev => [...prev, nomPhoto1]);
+
         setphoto1(null);
+        setNomPhoto1(null);
+
         setAnciennesPhotos(prev => [...prev, photo2]) ;
+        setNomAnciennesPhotos(prev => [...prev, nomPhoto2]);
+
         setphoto2(null);
+        setNomPhoto2(null);
       }
       setPhotoUrls(photoRestantes);
       console.log("anciennes photos =>", anciennesphotos);
@@ -90,7 +118,9 @@ function Appli() {
       setACliquerRetour(false);
       console.log("photosPresentes :", photosPresentes);
       setphoto1(photosPresentes[0]);
+      setNomPhoto1(nomPhotosPresentes[0]);
       setphoto2(photosPresentes[1]);
+      setNomPhoto2(nomPhotosPresentes[1]);
     }
   }
 
@@ -100,7 +130,10 @@ function Appli() {
       setACliquerRetour(true);
       console.log("walahi");
       setphoto1(anciennesphotos[0]);
+      setNomPhoto1(nomAnciennesphotos[0]);
+
       setphoto2(anciennesphotos[1]);
+      setNomPhoto2(nomAnciennesphotos[1]);
     }
   }
 
@@ -137,7 +170,9 @@ function Appli() {
               choisirPhotos={choisirPhotos}
               photoHazard={photoHazard}
               photo1={photo1}
+              nomPhoto1={nomPhoto1}
               photo2={photo2}
+              nomPhoto2={nomPhoto2}
               avantPremierVs={avantPremierVs}
               setAvantPremierVs={setAvantPremierVs}
               retoursPhotos={retoursPhotos}
