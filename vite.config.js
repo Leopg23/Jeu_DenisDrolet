@@ -14,8 +14,9 @@ export default defineConfig({
         short_name: 'PhotoApp',
         description: 'Photo upload application',
         theme_color: '#ffffff',
-        display: 'standalone',
-        start_url: '.',       
+        display: 'fullscreen',
+        start_url: '.',     
+          
         icons: [
           {
             src: 'pwa-192x192.png',

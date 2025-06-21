@@ -17,8 +17,18 @@
 
         img {
             // height: 680px;
-            width: clamp(9.375rem, -4.464rem + 36.905vw, 28.75rem);
+            width:  clamp(9.375rem, -4.464rem + 36.905vw, 28.75rem) ;
+            
 
+        }
+
+        .photo_base{
+            background-color: black;
+            width: clamp(9.375rem, -4.464rem + 36.905vw, 28.75rem);
+            height: calc(1.478260869565217 * clamp(9.375rem, -4.464rem + 36.905vw, 28.75rem)) ;
+            // border-radius: 50%;
+            overflow: hidden;
+            position: relative;
         }
     }
 

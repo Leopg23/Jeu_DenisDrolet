@@ -26,9 +26,13 @@ function Versus({ photo, setphoto, gererPhotos, photoUrls, choisirPhotos, photoH
         <div className='Versus'>
             <div className="separateur"></div>
             <div className="perso 1">
+                {displayState == "versus" ? 
                 <img
-                    src={displayState == "versus" ? photo1 : perso1_base}
-                />
+                    src={photo1}
+                /> 
+                : 
+                <div className="photo_base"></div>
+                }
             </div>
             <div className="vs">
 
@@ -37,8 +41,14 @@ function Versus({ photo, setphoto, gererPhotos, photoUrls, choisirPhotos, photoH
                     <path className="cls-1" d="M.9,50.78c-.34-.46,2.57-9.46,3.28-10.93,10.49.83,20.75,1.15,31.23.05.11,1.94-.23,3.95,0,5.89,1.47,12.36,2.33,27.89,4.77,39.68,2.07,10.03,7.47,10.85,10.07.56C57.6,57,54.39,5.18,96.72.92c12.17-1.23,29.66,3.14,25.44,19.07-3.75,14.16-23.49,6.21-34.27,9.3-25.05,7.17-21.95,42.78-26.39,62.53-3.14,13.98-12.13,20.03-26.43,18.73C2.73,107.6,19.04,63.76,6.42,53c-1.73-1.48-5.33-1.99-5.51-2.22Z" />
                 </svg>
             </div>
-            <div className="perso 2">
-                <img src={displayState == "versus" ? photo2 : perso2_base} />
+             <div className="perso 2">
+                {displayState == "versus" ? 
+                <img
+                    src={photo2}
+                /> 
+                : 
+                <div className="photo_base"></div>
+                }
             </div>
             <div className="separateur"></div>
         </div>
