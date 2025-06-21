@@ -10,9 +10,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
-        name: 'Photo Upload App',
-        short_name: 'PhotoApp',
-        description: 'Photo upload application',
+        name: 'Jeu Denis Drolet',
+        short_name: 'Jeu Denis Drolet',
+        description: 'Jeu Denis Drolet',
         theme_color: '#ffffff',
         display: 'fullscreen',
         start_url: '.',     
