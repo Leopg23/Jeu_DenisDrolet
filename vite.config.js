@@ -14,7 +14,7 @@ export default defineConfig({
         short_name: 'Jeu Denis Drolet',
         description: 'Jeu Denis Drolet',
         theme_color: '#ffffff',
-        display: 'fullscreen',
+        // display: 'fullscreen',
         start_url: '/Jeu_DenisDrolet/',  
         icons: [
           {
