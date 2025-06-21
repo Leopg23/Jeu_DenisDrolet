@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { VitePWA } from 'vite-plugin-pwa'  // This line is missing
+import { VitePWA } from 'vite-plugin-pwa'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     VitePWA({
+      filename: 'manifest.webmanifest',
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
@@ -15,8 +15,7 @@ export default defineConfig({
         description: 'Jeu Denis Drolet',
         theme_color: '#ffffff',
         display: 'fullscreen',
-        start_url: '.',     
-          
+        start_url: '/Jeu_DenisDrolet/',  
         icons: [
           {
             src: 'pwa-192x192.png',
@@ -30,13 +29,10 @@ export default defineConfig({
             purpose: 'any maskable'
           }
         ],
-
-      },
-
-
+      }
     })
   ],
-  base: "/Jeu_DenisDrolet/",// ajouter le nom du depot github si on publie sur GH pages : "/exemple/"
+  base: "/Jeu_DenisDrolet/",
   server: {
     host: '0.0.0.0'
   }
