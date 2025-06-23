@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Commandes from "./Commandes";
 import Versus from './Versus';
 import ChoisirImg from './ChoisirImg';
+import { use } from 'react';
 
 function Appli() {
   const [photo, setphoto] = useState(null);
@@ -23,7 +24,11 @@ function Appli() {
   const [nomPhotosPresentes, setNomPhotosPresentes] = useState([]);
   const [aCliquerRetour, setACliquerRetour] = useState(false);
 
-
+   useEffect(() => {
+    if (AChoisiImg) {
+      document.body.style.backgroundColor = "#efabab";
+    } 
+  }, [AChoisiImg]); 
   
   function gererPhotos(event) {
     const files = event.target.files;
